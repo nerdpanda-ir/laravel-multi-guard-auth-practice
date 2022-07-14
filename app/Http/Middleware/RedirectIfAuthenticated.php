@@ -29,9 +29,10 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             $guardObject = Auth::guard($guard);
-            $this->panelRouteToGuardService->set($guard);
-            if ($guardObject->check())
+            if ($guardObject->check()){
+		        $this->panelRouteToGuardService->set($guard);
                 return redirect($guardObject->routes['panel']);
+	        }
         }
 
         return $next($request);

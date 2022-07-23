@@ -52,6 +52,15 @@ return [
                 'login'=> 'admin-login'
             ]
         ],
+        'user_api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+        ],
+        'admin_api' => [
+            'driver' => 'sanctum',
+            'provider' => 'administrators',
+        ],
+        
     ],
 
     /*
